@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowkey Music Recommendations</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #d4a574, #8b6244);
+            margin: 0;
+            padding: 0;
+            color: #3e2723;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #fdf6ec;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(62, 39, 35, 0.5);
+        }
+        .music-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .music-card {
+            background: #f5e6d3;
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(62,39,35,0.2);
+        }
+        .music-info {
+            max-width: 70%;
+        }
+        .song-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .artist {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .genre-tag {
+            font-size: 12px;
+            background: #8b6244;
+            color: #fdf6ec;
+            padding: 3px 10px;
+            border-radius: 12px;
+        }
+        .spotify-btn {
+            padding: 8px 12px;
+            background: #1DB954;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        .page-btn {
+            padding: 6px 12px;
+            background: #8b6244;
+            color: #fdf6ec;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .page-btn.active {
+            background: #3e2723;
+        }
+        @media (max-width: 600px) {
+            .music-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lowkey Music Recommendations</h1>
+        <div class="music-grid" id="musicGrid"></div>
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <script>
+        const musicDatabase = [
+            { title: "Apocalypse", artist: "Cigarettes After Sex", genre: "Dream Pop", spotify: "https://open.spotify.com/track/0yc6Gst2xkRu0eMLeRMGCX" },
+            { title: "Lover", artist: "Taylor Swift", genre: "Indie", spotify: "https://open.spotify.com/track/1dGr1c8CrMLDpV6mPbImSI" },
+            { title: "We Fell in Love in October", artist: "Girl in Red", genre: "Bedroom Pop", spotify: "https://open.spotify.com/track/0W4Kpfp1w2xNY5iCcP2JJ" },
+            { title: "Sweater Weather", artist: "The Neighbourhood", genre: "Alt R&B", spotify: "https://open.spotify.com/track/2QjOHCTQ1Jl3zawyYOpxh6" },
+            { title: "Space Song", artist: "Beach House", genre: "Dream Pop", spotify: "https://open.spotify.com/track/7H0ya83CMmgFcOhw0UB6ow" },
+            { title: "Flightless Bird, American Mouth", artist: "Iron & Wine", genre: "Indie", spotify: "https://open.spotify.com/track/2GiJYvgVaD2HtM8GqD9EgQ" },
+            { title: "Coffee", artist: "Beabadoobee", genre: "Bedroom Pop", spotify: "https://open.spotify.com/track/4HBZA5flZLE435QTztThqH" },
+            { title: "Death Bed", artist: "Powfu ft. Beabadoobee", genre: "Lo-Fi", spotify: "https://open.spotify.com/track/7eJMfftS33KTjuF7lTsMCx" },
+            { title: "Heather", artist: "Conan Gray", genre: "Bedroom Pop", spotify: "https://open.spotify.com/track/4xqrdfXkTW4T0RauPLv3WA" },
+            { title: "Are You Bored Yet?", artist: "Wallows ft. Clairo", genre: "Indie", spotify: "https://open.spotify.com/track/7FNnA9vBm5EKtRhlNhh3S" },
+            { title: "Sofia", artist: "Clairo", genre: "Bedroom Pop", spotify: "https://open.spotify.com/track/7B3z0ySL9Rr0XvZEAjWZzM" },
+            { title: "Good Days", artist: "SZA", genre: "Alt R&B", spotify: "https://open.spotify.com/track/3YJJjQPAbDT7mGpX3WtQ9A" }
+        ];
+
+        const itemsPerPage = 4;
+        let currentPage = 1;
+
+        function renderMusicGrid(page = 1) {
+            const musicGrid = document.getElementById('musicGrid');
+            musicGrid.innerHTML = '';
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageSongs = musicDatabase.slice(start, end);
+
+            pageSongs.forEach(song => {
+                const card = document.createElement('div');
+                card.className = 'music-card';
+                card.innerHTML = `
+                    <div class="music-info">
+                        <div class="song-title">${song.title}</div>
+                        <div class="artist">${song.artist}</div>
+                        <div class="genre-tag">${song.genre}</div>
+                    </div>
+                    <a href="${song.spotify}" target="_blank" class="spotify-btn">Listen</a>
+                `;
+                musicGrid.appendChild(card);
+            });
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+            const pageCount = Math.ceil(musicDatabase.length / itemsPerPage);
+
+            for (let i = 1; i <= pageCount; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'page-btn' + (i === currentPage ? ' active' : '');
+                btn.textContent = i;
+                btn.addEventListener('click', () => {
+                    currentPage = i;
+                    renderMusicGrid(currentPage);
+                });
+                pagination.appendChild(btn);
+            }
+        }
+
+        // Initial render
+        renderMusicGrid(currentPage);
+    </script>
+</body>
+</html>
