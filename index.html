@@ -108,50 +108,140 @@
 
     <script>
         const musicDatabase = [
-            
-            { id: 1, title: "Apocalypse", artist: "Cigarettes After Sex", genre: "dream-pop", emoji: "🌙", vibe: 95, spotify: "https://open.spotify.com/track/0yc6Gst2xkRu0eMLeRMGCX" },
-            { id: 2, title: "Lover", artist: "Taylor Swift", genre: "indie", emoji: "💝", vibe: 88, spotify: "https://open.spotify.com/track/1dGr1c8CrMLDpV6mPbImSI" },
-            { id: 3, title: "We Fell in Love in October", artist: "Girl in Red", genre: "bedroom-pop", emoji: "🍂", vibe: 92, spotify: "https://open.spotify.com/track/0W4Kpfp1w2xNY5iCcP2JJ" },
-            { id: 4, title: "Sweater Weather", artist: "The Neighbourhood", genre: "alt-rnb", emoji: "🧥", vibe: 94, spotify: "https://open.spotify.com/track/2QjOHCTQ1Jl3zawyYOpxh6" },
-            { id: 5, title: "Space Song", artist: "Beach House", genre: "dream-pop", emoji: "🌌", vibe: 90, spotify: "https://open.spotify.com/track/7H0ya83CMmgFcOhw0UB6ow" },
-            { id: 6, title: "Flightless Bird, American Mouth", artist: "Iron & Wine", genre: "indie", emoji: "🕊️", vibe: 87, spotify: "https://open.spotify.com/track/2GiJYvgVaD2HtM8GqD9EgQ" },
-            { id: 7, title: "Coffee", artist: "Beabadoobee", genre: "bedroom-pop", emoji: "☕", vibe: 89, spotify: "https://open.spotify.com/track/4HBZA5flZLE435QTztThqH" },
-            { id: 8, title: "Death Bed", artist: "Powfu ft. Beabadoobee", genre: "lofi", emoji: "🛏️", vibe: 91, spotify: "https://open.spotify.com/track/7eJMfftS33KTjuF7lTsMCx" },
-            { id: 9, title: "Heather", artist: "Conan Gray", genre: "bedroom-pop", emoji: "💔", vibe: 93, spotify: "https://open.spotify.com/track/4xqrdfXkTW4T0RauPLv3WA" },
-            { id: 10, title: "Are You Bored Yet?", artist: "Wallows ft. Clairo", genre: "indie", emoji: "🎮", vibe: 88, spotify: "https://open.spotify.com/track/7FNnA9vBm5EKtRhlNhh3S" },
-            { id: 11, title: "Sofia", artist: "Clairo", genre: "bedroom-pop", emoji: "💕", vibe: 90, spotify: "https://open.spotify.com/track/7B3z0ySL9Rr0XvZEAjWZzM" },
-            { id: 12, title: "Good Days", artist: "SZA", genre: "alt-rnb", emoji: "☀️", vibe: 89, spotify: "https://open.spotify.com/track/3YJJjQPAbDT7mGpX3WtQ9A" },
-            { id: 13, title: "Telephones", artist: "Vacations", genre: "dream-pop", emoji: "📞", vibe: 86, spotify: "https://open.spotify.com/track/1IJxbEXY3CYfW0Cp1pBwPp" },
-            { id: 14, title: "Chamber of Reflection", artist: "Mac DeMarco", genre: "indie", emoji: "🪞", vibe: 91, spotify: "https://open.spotify.com/track/7H7NyZ3G075GqPx2evsfeb" },
-            { id: 15, title: "Bags", artist: "Clairo", genre: "bedroom-pop", emoji: "👜", vibe: 87, spotify: "https://open.spotify.com/track/5SWnsxjhdcEDc7LJjq" },
-            { id: 16, title: "Line Without a Hook", artist: "Ricky Montgomery", genre: "indie", emoji: "🎣", vibe: 92, spotify: "https://open.spotify.com/track/1UHS8Rf6h5Ar3CDWRd3wjF" },
-            { id: 17, title: "Falling Behind", artist: "Laufey", genre: "soft-rock", emoji: "🎹", vibe: 85, spotify: "https://open.spotify.com/track/4aI9aW6HvARKJ2rzu0L4v" },
-            { id: 18, title: "From the Start", artist: "Laufey", genre: "soft-rock", emoji: "💌", vibe: 88, spotify: "https://open.spotify.com/track/3VF68KZqC7SlYg5Tqv0Wu" },
-            { id: 19, title: "Bubble Gum", artist: "Clairo", genre: "bedroom-pop", emoji: "🫧", vibe: 84, spotify: "https://open.spotify.com/track/3mRLHiSHYtC8Hk7bzZdUs1" },
-            { id: 20, title: "Golden", artist: "Harry Styles", genre: "indie", emoji: "✨", vibe: 86, spotify: "https://open.spotify.com/track/7LVHVU3tWfcxj5aiPFEW4Q" },
-            { id: 21, title: "Heat Waves", artist: "Glass Animals", genre: "alt-rnb", emoji: "🌊", vibe: 90, spotify: "https://open.spotify.com/track/02MWAffLxlfxAUY7c5dvx" },
-            { id: 22, title: "Pluto Projector", artist: "Rex Orange County", genre: "bedroom-pop", emoji: "🪐", vibe: 89, spotify: "https://open.spotify.com/track/3LgWsmilsrWXiPYQFRD0T" },
-            { id: 23, title: "See You Again", artist: "Tyler, The Creator ft. Kali Uchis", genre: "chill-rap", emoji: "🌻", vibe: 87, spotify: "https://open.spotify.com/track/7KA4W4McWYRpgf0fWsJZWB" },
-            { id: 24, title: "Lost in the Light", artist: "Bahamas", genre: "soft-rock", emoji: "💡", vibe: 83, spotify: "https://open.spotify.com/track/5M4yti0QxgqJieUYfExnE" },
-            { id: 25, title: "Freaks", artist: "Surf Curse", genre: "indie", emoji: "👻", vibe: 91, spotify: "https://open.spotify.com/track/1Dwfg5K0vVYU6KUPRqS4J" },
-            { id: 26, title: "Mr. Brightside", artist: "The Killers", genre: "soft-rock", emoji: "🌟", vibe: 85, spotify: "https://open.spotify.com/track/7oK9VyNzrYvRFo7nQEYkWN" },
-            { id: 27, title: "Electric Feel", artist: "MGMT", genre: "indie", emoji: "⚡", vibe: 88, spotify: "https://open.spotify.com/track/3FtYbEfBqAlGO46NUDQSAt" },
-            { id: 28, title: "Pretty Boy", artist: "The Neighbourhood", genre: "alt-rnb", emoji: "🖤", vibe: 86, spotify: "https://open.spotify.com/track/0PE0u6lXrcI0S2BFUBkwKq" },
-            { id: 29, title: "Television / So Far So Good", artist: "Rex Orange County", genre: "bedroom-pop", emoji: "📺", vibe: 84, spotify: "https://open.spotify.com/track/5GUYJTQap5F3RDQiCOJhrS" },
-            { id: 30, title: "Borderline", artist: "Tame Impala", genre: "dream-pop", emoji: "🌈", vibe: 89, spotify: "https://open.spotify.com/track/2g1EakEaW7jVkMrLvpeP3j" },
-            { id: 31, title: "ivy", artist: "Frank Ocean", genre: "alt-rnb", emoji: "🌿", vibe: 93, spotify: "https://open.spotify.com/track/2ZWlPOoWh0626oTaHrnl2a" },
-            { id: 32, title: "Dreams Tonite", artist: "Alvvays", genre: "dream-pop", emoji: "💭", vibe: 87, spotify: "https://open.spotify.com/track/3NhhyodlOuLvmj9Uu1Ac0C" },
-            { id: 33, title: "Nights", artist: "Frank Ocean", genre: "alt-rnb", emoji: "🌃", vibe: 92, spotify: "https://open.spotify.com/track/7eqoqGkKwgOaWNNHx90uEZ" },
-            { id: 34, title: "Loving Is Easy", artist: "Rex Orange County", genre: "bedroom-pop", emoji: "💚", vibe: 85, spotify: "https://open.spotify.com/track/1pKLBKgFnfeMkUC7gEZ8yC" },
-            { id: 35, title: "Sunflower", artist: "Rex Orange County", genre: "bedroom-pop", emoji: "🌻", vibe: 88, spotify: "https://open.spotify.com/track/4jFwi7pUXrKQkdKKw2kL91" },
-            { id: 36, title: "Best Friend", artist: "Rex Orange County", genre: "bedroom-pop", emoji: "👯", vibe: 86, spotify: "https://open.spotify.com/" },
-            { id: 37, title: "Moonlight", artist: "Kali Uchis", genre: "alt-rnb", emoji: "🌙", vibe: 90, spotify: "https://open.spotify.com/track/0J7U24vlOOIeMpuaO6Q85A" },
-            { id: 38, title: "After the Storm", artist: "Kali Uchis ft. Tyler, The Creator", genre: "alt-rnb", emoji: "⛈️", vibe: 89, spotify: "https://open.spotify.com/track/0NwKP1PY3uCQJFQWKf51aE" },
-            { id: 39, title: "Lover Is a Day", artist: "Cuco", genre: "lofi", emoji: "💖", vibe: 84, spotify: "https://open.spotify.com/track/5k6RM5WXyW0jxJJMkQAHr0" },
-            { id: 40, title: "Lo Que Siento", artist: "Cuco", genre: "lofi", emoji: "💫", vibe: 87, spotify: "https://open.spotify.com/track/6dMw79lJO0vPz8PvJ5cBIH" },
-            { id: 41, title: "Melting", artist: "Kali Uchis", genre: "alt-rnb", emoji: "🍯", vibe: 86, spotify: "https://open.spotify.com/track/1MsxVZu86qRssH5sJbQcg" },
-            { id: 42, title: "Pretty Girl", artist: "Clairo", genre: "bedroom-pop", emoji: "🎀", vibe: 88, spotify: "https://open.spotify.com/track/2RDyg00OREjcJbYMVsQPQ" },
-            { id: 43, title: "4EVER", artist: "Clairo", genre: "bedroom-pop", emoji: "♾️", vibe: 85, spotify: "https://open.spotify.com/track/0VF7YLIxSQKyNiFL1Cj0J" },
-            { id: 44, title: "Amoeba", artist: "Clairo", genre: "bedroom-pop", emoji: "🦠", vibe: 83, spotify: "https://open.spotify.com/track/17Iy1lDaFVE0B0vniYgaZY" },
-            { id: 45, title: "Softly", artist: "Clairo", genre: "bedroom-pop", emoji: "🌸", vibe: 90, spotify: "https://open.spotify.com/track/7HhuBDCeiQWDOixtNxSRuN" }
+            {id:1,title:"Apocalypse",artist:"Cigarettes After Sex",genre:"dream-pop",spotify:"https://open.spotify.com/track/0yc6Gst2xkRu0eMLeRMGCX"},
+            {id:2,title:"Lover",artist:"Taylor Swift",genre:"indie",spotify:"https://open.spotify.com/track/1dGr1c8CrMLDpV6mPbImSI"},
+            {id:3,title:"We Fell in Love in October",artist:"Girl in Red",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/0W4Kpfp1w2xNY5iCcP2JJ"},
+            {id:4,title:"Sweater Weather",artist:"The Neighbourhood",genre:"alt-rnb",spotify:"https://open.spotify.com/track/2QjOHCTQ1Jl3zawyYOpxh6"},
+            {id:5,title:"Space Song",artist:"Beach House",genre:"dream-pop",spotify:"https://open.spotify.com/track/7H0ya83CMmgFcOhw0UB6ow"},
+            {id:6,title:"Flightless Bird, American Mouth",artist:"Iron & Wine",genre:"indie",spotify:"https://open.spotify.com/track/2GiJYvgVaD2HtM8GqD9EgQ"},
+            {id:7,title:"Coffee",artist:"Beabadoobee",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/4HBZA5flZLE435QTztThqH"},
+            {id:8,title:"Death Bed",artist:"Powfu ft. Beabadoobee",genre:"lofi",spotify:"https://open.spotify.com/track/7eJMfftS33KTjuF7lTsMCx"},
+            {id:9,title:"Heather",artist:"Conan Gray",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/4xqrdfXkTW4T0RauPLv3WA"},
+            {id:10,title:"Are You Bored Yet?",artist:"Wallows ft. Clairo",genre:"indie",spotify:"https://open.spotify.com/track/7FNnA9vBm5EKtRhlNhh3S"},
+            {id:11,title:"Sofia",artist:"Clairo",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/7B3z0ySL9Rr0XvZEAjWZzM"},
+            {id:12,title:"Good Days",artist:"SZA",genre:"alt-rnb",spotify:"https://open.spotify.com/track/3YJJjQPAbDT7mGpX3WtQ9A"},
+            {id:13,title:"Telephones",artist:"Vacations",genre:"dream-pop",spotify:"https://open.spotify.com/track/1IJxbEXY3CYfW0Cp1pBwPp"},
+            {id:14,title:"Chamber of Reflection",artist:"Mac DeMarco",genre:"indie",spotify:"https://open.spotify.com/track/7H7NyZ3G075GqPx2evsfeb"},
+            {id:15,title:"Bags",artist:"Clairo",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/5SWnsxjhdcEDc7LJjq"},
+            {id:16,title:"Line Without a Hook",artist:"Ricky Montgomery",genre:"indie",spotify:"https://open.spotify.com/track/1UHS8Rf6h5Ar3CDWRd3wjF"},
+            {id:17,title:"Falling Behind",artist:"Laufey",genre:"soft-rock",spotify:"https://open.spotify.com/track/4aI9aW6HvARKJ2rzu0L4v"},
+            {id:18,title:"From the Start",artist:"Laufey",genre:"soft-rock",spotify:"https://open.spotify.com/track/3VF68KZqC7SlYg5Tqv0Wu"},
+            {id:19,title:"Bubble Gum",artist:"Clairo",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/3mRLHiSHYtC8Hk7bzZdUs1"},
+            {id:20,title:"Golden",artist:"Harry Styles",genre:"indie",spotify:"https://open.spotify.com/track/7LVHVU3tWfcxj5aiPFEW4Q"},
+            {id:21,title:"Heat Waves",artist:"Glass Animals",genre:"alt-rnb",spotify:"https://open.spotify.com/track/02MWAffLxlfxAUY7c5dvx"},
+            {id:22,title:"Pluto Projector",artist:"Rex Orange County",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/3LgWsmilsrWXiPYQFRD0T"},
+            {id:23,title:"See You Again",artist:"Tyler, The Creator ft. Kali Uchis",genre:"chill-rap",spotify:"https://open.spotify.com/track/7KA4W4McWYRpgf0fWsJZWB"},
+            {id:24,title:"Lost in the Light",artist:"Bahamas",genre:"soft-rock",spotify:"https://open.spotify.com/track/6iOjH7iFRfzR4jP3nwyU8"},
+            {id:25,title:"Can I Call You Tonight?",artist:"Dayglow",genre:"indie",spotify:"https://open.spotify.com/track/0mS1HInNTSttDfpbAh5nGn"},
+            {id:26,title:"Moon",artist:"Kid Francescoli",genre:"dream-pop",spotify:"https://open.spotify.com/track/6xH5wBpd0tzxfkM1QewkG7"},
+            {id:27,title:"K.",artist:"Lorde",genre:"indie",spotify:"https://open.spotify.com/track/1v1wvjJx0lnpU4N0QKpBka"},
+            {id:28,title:"Softly",artist:"Clairo",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/3Gr2JZgQhPpM1K1bN9l10Q"},
+            {id:29,title:"Japanese Denim",artist:"Daniel Caesar",genre:"alt-rnb",spotify:"https://open.spotify.com/track/3r2P4h57w8Vb9vXlYbc0zQ"},
+            {id:30,title:"Come Through",artist:"Summer Walker & Usher",genre:"alt-rnb",spotify:"https://open.spotify.com/track/6gk5gDx4hCO4fN9K19jhBM"},
+            {id:31,title:"Loverboy",artist:"Phum Viphurit",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/5s14mO3A1u0OaLsj1kXy5l"},
+            {id:32,title:"Something About You",artist:"Majid Jordan",genre:"alt-rnb",spotify:"https://open.spotify.com/track/1trXHAjaMiK6M7c0bSoeyD"},
+            {id:33,title:"Sunday Morning",artist:"Maroon 5",genre:"soft-rock",spotify:"https://open.spotify.com/track/2EqlS6tkEnglzr7tkKAAYD"},
+            {id:34,title:"Pink + White",artist:"Frank Ocean",genre:"alt-rnb",spotify:"https://open.spotify.com/track/3gh0oFxeeXyqFK8Lk6ZsVC"},
+            {id:35,title:"Lover Like Me",artist:"Claud",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/2X4xszMGXtGhUap3jBttmV"},
+            {id:36,title:"Somebody Else",artist:"The 1975",genre:"indie",spotify:"https://open.spotify.com/track/3DE7Lgg16LhQ7fI34M1xjG"},
+            {id:37,title:"Nights",artist:"Frank Ocean",genre:"alt-rnb",spotify:"https://open.spotify.com/track/3wGxVb8YmycEO40rEhWBCQ"},
+            {id:38,title:"Telegraph Ave",artist:"Childish Gambino",genre:"chill-rap",spotify:"https://open.spotify.com/track/6K4t31amVTZDgR3sKmwUJJ"},
+            {id:39,title:"Japanese Denim",artist:"Daniel Caesar",genre:"alt-rnb",spotify:"https://open.spotify.com/track/3r2P4h57w8Vb9vXlYbc0zQ"},
+            {id:40,title:"Coffee",artist:"Beabadoobee",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/4HBZA5flZLE435QTztThqH"},
+            {id:41,title:"Falling",artist:"Harry Styles",genre:"indie",spotify:"https://open.spotify.com/track/4aWmUDTfIPGksMNLV2rQP2"},
+            {id:42,title:"Garden Song",artist:"Phoebe Bridgers",genre:"indie",spotify:"https://open.spotify.com/track/1kPSZxUIdvhqfIG1Pz8V0g"},
+            {id:43,title:"Motion Sickness",artist:"Phoebe Bridgers",genre:"indie",spotify:"https://open.spotify.com/track/0qUuWiJjY4bIpQf3sR3mlK"},
+            {id:44,title:"Numb",artist:"Clairo",genre:"bedroom-pop",spotify:"https://open.spotify.com/track/0nJkT8fhbzQbX28RxKZsFY"},
+            {id:45,title:"Peach",artist:"Broods",genre:"dream-pop",spotify:"https://open.spotify.com/track/4cjPl6ppC6IAl1Xr51qFoa"}
         ];
+
+        let likedSongs = [];
+
+        const musicGrid = document.getElementById('musicGrid');
+        const searchInput = document.getElementById('searchInput');
+        const totalSongsEl = document.getElementById('totalSongs');
+        const likedSongsEl = document.getElementById('likedSongs');
+        const vibeScoreEl = document.getElementById('vibeScore');
+
+        function renderSongs(songs) {
+            musicGrid.innerHTML = '';
+            if(songs.length === 0) {
+                document.getElementById('emptyState').style.display = 'block';
+            } else {
+                document.getElementById('emptyState').style.display = 'none';
+                songs.forEach(song=>{
+                    const card = document.createElement('div');
+                    card.classList.add('music-card');
+                    card.innerHTML = `
+                        <div class="music-info">
+                            <div class="song-title">${song.title}</div>
+                            <div class="artist">${song.artist}</div>
+                            <div class="genre-tag">${song.genre.replace('-', ' ')}</div>
+                            <a href="${song.spotify}" target="_blank" class="spotify-btn">Listen</a>
+                            <button class="spotify-btn" style="margin-top:5px; background:#f57c00;" onclick="toggleLike(${song.id})">
+                                ${likedSongs.includes(song.id) ? 'Unlike' : 'Like'}
+                            </button>
+                        </div>
+                    `;
+                    musicGrid.appendChild(card);
+                });
+            }
+        }
+
+        function toggleLike(id){
+            if(likedSongs.includes(id)){
+                likedSongs = likedSongs.filter(i=>i!==id);
+            } else {
+                likedSongs.push(id);
+            }
+            updateStats();
+            renderSongsFiltered();
+        }
+
+        function updateStats(){
+            likedSongsEl.textContent = likedSongs.length;
+            vibeScoreEl.textContent = likedSongs.length * 10;
+        }
+
+        function renderSongsFiltered(){
+            const query = searchInput.value.toLowerCase();
+            const filtered = musicDatabase.filter(s=> 
+                s.title.toLowerCase().includes(query) || 
+                s.artist.toLowerCase().includes(query) || 
+                s.genre.toLowerCase().includes(query)
+            );
+            renderSongs(filtered);
+        }
+
+        renderSongs(musicDatabase.slice(0,4));
+        totalSongsEl.textContent = musicDatabase.length;
+
+        searchInput.addEventListener('input',()=>{
+            renderSongsFiltered();
+        });
+
+        totalSongsEl.parentNode.addEventListener('click', ()=>{
+            renderSongs(musicDatabase.slice(0,4));
+        });
+
+        likedSongsEl.parentNode.addEventListener('click', ()=>{
+            const saved = musicDatabase.filter(s=> likedSongs.includes(s.id));
+            renderSongs(saved);
+        });
+
+        const genreButtons = document.querySelectorAll('.genre-btn');
+        genreButtons.forEach(btn=>{
+            btn.addEventListener('click', ()=>{
+                genreButtons.forEach(b=>b.classList.remove('active'));
+                btn.classList.add('active');
+                const genre = btn.dataset.genre;
+                if(genre==='all'){
+                    renderSongs(musicDatabase);
+                } else {
+                    renderSongs(musicDatabase.filter(s=>s.genre===genre));
+                }
+            });
+        });
+    </script>
+</body>
+</html>
